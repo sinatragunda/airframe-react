@@ -20,13 +20,11 @@ const LoginMiddleware = (middleware)=>(dispatch)=>(action)=>{
 }
 
 const onAuthenticationResponse = (response ,dispatch)=>{
-	//console.log("Auth response "+JSON.stringify(response));
 	
-	const status = response.status ;
 	const data = response.data ;
 	const action = actions.loginActions.loginSuccessful(data);
-	alert('dispatch action done ');
 	dispatch(action);
+
 }
 
 const onAuthenticationFailed = (response ,dispatch)=>{

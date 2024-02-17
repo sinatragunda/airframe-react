@@ -1,6 +1,7 @@
 import React from 'react';
 import {connect} from 'react-redux';
-
+import LoginContainer from '../login/LoginContainer';
+import { Outlet} from 'react-router-dom';
 class AuthentificationGuard extends React.Component {
 
 	constructor(props){
@@ -9,15 +10,11 @@ class AuthentificationGuard extends React.Component {
 
 	guardedRoute = ()=>{
 
-		alert('is this even working ? ');
-
 		const isAuthenticated = this.props.isAuthenticated;
 
-		alert("Is this authenticated son ? "+isAuthenticated.toString());
 		if(isAuthenticated){
 			return <Outlet />
 		}
-
 		return <LoginContainer /> 
 	}
 
@@ -29,10 +26,8 @@ class AuthentificationGuard extends React.Component {
 
 
 const mapStateToProps = (state) =>{
-	
-	alert(JSON.stringify(state));
 	return{
-		isAuthenticated: state.login.isAuthenticated
+		isAuthenticated: state.login.authentication.isAuthenticated
 	}
 }
 

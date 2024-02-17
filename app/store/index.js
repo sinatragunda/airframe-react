@@ -2,7 +2,8 @@ const authenticationState = {
 	authentication:{
 		authenticationKey : null ,
 		isAuthenticated : false,
-		userData : null 
+		userData : null,
+		permissions : [] 
 	}
 }
 
