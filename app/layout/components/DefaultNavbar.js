@@ -12,18 +12,22 @@ import { NavbarActivityFeed } from './NavbarActivityFeed';
 import { NavbarMessages } from './NavbarMessages';
 import { NavbarUser } from './NavbarUser';
 import { LogoThemed } from './../../routes/components/LogoThemed/LogoThemed';
+import { SearchResultsHeader} from  './../../routes/components/SearchResults/SearchResultsHeader';
 
 export const DefaultNavbar = () => (
     <Navbar light expand="xs" fluid>
         <Nav navbar>
+            
             <NavItem className="mr-3">
                 <SidebarTrigger/>
             </NavItem>
+            
             <NavItem className="navbar-brand d-lg-none">
                 <Link to="/">
                     <LogoThemed />
                 </Link>
             </NavItem>
+            
             <NavItem className="d-none d-md-block">
                 <span className="navbar-text">
                     <Link to="/">
@@ -34,15 +38,19 @@ export const DefaultNavbar = () => (
                     <i className="fa fa-angle-right"></i>
                 </span>
                 <span className="navbar-text">
-                    <Link to="/">Start</Link>
+                    <Link to="/">Home</Link>
                 </span>
                 <span className="navbar-text px-2">
                     <i className="fa fa-angle-right"></i>
                 </span>
                 <span className="navbar-text">
-                    Page Link
+                    Current
                 </span>
             </NavItem>
+        </Nav>
+
+        <Nav navbar className="ml-auto">
+            <SearchResultsHeader showDescription={false}/>
         </Nav>
         <Nav navbar className="ml-auto">
             <NavbarActivityFeed />

@@ -16,30 +16,32 @@ import {
 import { HeaderAuth } from "../../components/Pages/HeaderAuth";
 import { FooterAuth } from "../../components/Pages/FooterAuth";
 
-const Login = () => (
+
+const Login = (props) => (
     <EmptyLayout>
         <EmptyLayout.Section center>
             { /* START Header */}
             <HeaderAuth 
-                title="Sign In to Application"
+                title="Wese Agent Banking Sign In"
+                text = "Welcome to Wese Core Banking Agent Application"
             />
             { /* END Header */}
             { /* START Form */}
             <Form className="mb-3">
                 <FormGroup>
                     <Label for="emailAdress">
-                        Email Adress
+                        Email Adress / Username 
                     </Label>
-                    <Input type="email" name="email" id="emailAdress" placeholder="Enter email..." className="bg-white" />
+                    <Input type="username"  onChange= {props.updateUsername} name="username" id="username" placeholder="Enter username or email " className="bg-white" />
                     <FormText color="muted">
-                        We&amp;ll never share your email with anyone else.
+                        Login details should always be kept private.
                     </FormText>
                 </FormGroup>
                 <FormGroup>
                     <Label for="password">
                         Password
                     </Label>
-                    <Input type="password" name="password" id="password" placeholder="Password..." className="bg-white" />
+                    <Input type="password" onChange ={props.updatePassword} name="password" id="password" placeholder="Password..." className="bg-white" />
                 </FormGroup>
                 <FormGroup>
                     <CustomInput type="checkbox" id="rememberPassword" label="Remember Password" inline />
@@ -47,7 +49,7 @@ const Login = () => (
                 <ThemeConsumer>
                 {
                     ({ color }) => (
-                        <Button color={ color } block tag={ Link } to="/">
+                        <Button onClick= {props.handleLogin} color={ color } block>
                             Sign In
                         </Button>
                     )

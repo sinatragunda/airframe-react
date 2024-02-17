@@ -3,15 +3,15 @@ import PropTypes from 'prop-types';
 
 const FooterText = (props) => (
 	<React.Fragment>
-		(C) { props.year } All Rights Reserved. This is the &quot;{ props.name }&quot; built with { props.desc }. 
+		(C) { props.year } All Rights Reserved. This is &quot;{ props.name }&quot; built for { props.desc }. 
 		Designed and implemented by{' '}
 		<a
-			href="http://www.webkom.co"
+			href="http://www.taatconsulting.com"
 			target="_blank"
 			rel="noopener noreferrer"
 			className="sidebar__link"
 		>
-			www.webkom.co
+			Taat Consulting
 		</a>
 	</React.Fragment>
 )
@@ -20,10 +20,11 @@ FooterText.propTypes = {
 	name: PropTypes.node,
 	desc: PropTypes.node,
 };
+
 FooterText.defaultProps = {
-    year: "2018",
-    name: "Admin Theme",
-    desc: "Bootstrap 4, React 16 (latest) & NPM"
+    year: new Date().getFullYear(),
+    name: "Wese Agent Banking",
+    desc: "Wese Core Banking Software Company",
 };
 
 export { FooterText };

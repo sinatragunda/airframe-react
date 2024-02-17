@@ -2,10 +2,20 @@ import '@babel/polyfill';
 
 import React from 'react';
 import { render } from 'react-dom';
+import ReactDOM from 'react-dom';
 
 import App from './components/App';
+import {Provider} from 'react-redux';
+import reducer from './reducers';
+import {createStore} from 'redux';
+import middleware from './middleware';
 
-render(
-    <App />,
-    document.querySelector('#root')
-);
+
+const store = createStore(reducer ,middleware);
+const root = document.querySelector('#root');
+
+ReactDOM.render(
+    <Provider store = {store}>
+        <App/>
+    </Provider>
+    , root);
