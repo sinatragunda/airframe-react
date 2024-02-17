@@ -3,7 +3,7 @@ import ReactDOM from 'react-dom';
 import PropTypes from 'prop-types';
 import classNames from 'classnames';
 import { Helmet } from 'react-helmet';
-import { withRouter } from 'react-router-dom';
+//import { withRouter } from 'react-router-dom';
 import _ from 'lodash';
 
 import { LayoutContent } from './LayoutContent';
@@ -11,8 +11,11 @@ import { LayoutNavbar } from './LayoutNavbar';
 import { LayoutSidebar } from './LayoutSidebar';
 import { PageConfigContext } from './PageConfigContext';
 import { ThemeClass } from './../Theme';
+import { useLocation } from 'react-router-dom';
 
 import config from './../../../config';
+
+import { withRouter } from './setupPage';
 
 const findChildByType = (children, targetType) => {
     let result;

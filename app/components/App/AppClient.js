@@ -17,4 +17,4 @@ const AppClient = () => {
     );
 }
 
-export default hot(module)(AppClient);
+export default AppClient;

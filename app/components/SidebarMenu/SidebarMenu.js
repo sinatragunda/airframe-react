@@ -1,12 +1,13 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-import { withRouter } from 'react-router-dom';
 import _ from 'lodash';
 import classNames from 'classnames';
 
 import { withPageConfig } from './../Layout/withPageConfig'
 import Common from './../../common';
 import { MenuContext } from './MenuContext';
+
+import {withRouter} from './../Layout/setupPage';
 
 class SidebarMenu extends React.Component {
     static propTypes = {
