@@ -8,14 +8,15 @@ export const SidebarMiddleNav = () => (
             icon={<i className="fa fa-fw fa-home"></i>}
             title="Dashboards"
         >
-            <SidebarMenu.Item title="Analytics" to='/dashboards/analytics' exact />
-            <SidebarMenu.Item title="Projects" to='/dashboards/projects' exact />
-            <SidebarMenu.Item title="System" to='/dashboards/system' exact />
-            <SidebarMenu.Item title="Monitor" to='/dashboards/monitor' exact />
+            <SidebarMenu.Item title="Profile" to='/profile' exact />
+            <SidebarMenu.Item title="Account" to='/account' exact />
+            <SidebarMenu.Item title="Loan" to='/loan' exact />
+            <SidebarMenu.Item title="Share" to='/dashboards/monitor' exact />
             <SidebarMenu.Item title="Financial" to='/dashboards/financial' exact />
             <SidebarMenu.Item title="Stock" to='/dashboards/stock' exact />
             <SidebarMenu.Item title="Reports" to='/dashboards/reports' exact />
         </SidebarMenu.Item>
+
         <SidebarMenu.Item
             icon={<i className="fa fa-fw fa-th"></i>}
             title="Widgets"
@@ -176,17 +177,6 @@ export const SidebarMiddleNav = () => (
             title="Docs"
             href='https://webkom.gitbook.io/spin/v/airframe/airframe-react/documentation-react'
         />
-        { /* -------- Versions ---------*/ }
-        <SidebarMenu.Item
-            icon={<i className="fa fa-fw fa-folder-open-o"></i>}
-            title="Versions"
-        >
-            <SidebarMenu.Item title="NextJS (React)" href='http://airframe.nextjs.webkom.co/' />
-            <SidebarMenu.Item title="React" href='http://dashboards.webkom.co/react/airframe' />
-            <SidebarMenu.Item title="jQuery" to="http://dashboards.webkom.co/jquery/airframe/" />
-            <SidebarMenu.Item title="Vue" to="http://dashboards.webkom.co/vue/airframe" />
-            <SidebarMenu.Item title="Angular" to="http://dashboards.webkom.co/angular/airframe" />
-            <SidebarMenu.Item title=".NET MVC" to="http://dashboards.webkom.co/net-mvc/airframe" />
-        </SidebarMenu.Item>
+
     </SidebarMenu >
 );

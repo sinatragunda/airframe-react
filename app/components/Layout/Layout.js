@@ -56,20 +56,21 @@ class Layout extends React.Component {
             sidebarHidden: false,
             navbarHidden: false,
             footerHidden: false,
-            sidebarCollapsed: false,
+            sidebarCollapsed: true,
             screenSize: '',
             animationsDisabled: true,
-
             pageTitle: null,
             pageDescription: config.siteDescription,
             pageKeywords: config.siteKeywords
         };
 
-        this.lastLgSidebarCollapsed = false;
+        this.lastLgSidebarCollapsed = true ;
         this.containerRef = React.createRef();
     }
 
     componentDidMount() {
+
+        //this.toggleSidebar();
         // Determine the current window size
         // and set it up in the context state
         const layoutAdjuster = () => {
@@ -193,9 +194,14 @@ class Layout extends React.Component {
     }
 
     toggleSidebar() {
+        alert('we tooggling side bar ,initial value is '+this.state.sidebarCollapsed);
         this.setState({
             sidebarCollapsed: !this.state.sidebarCollapsed
         });
+
+        alert('after toogling side bar ,value is '+this.state.sidebarCollapsed);
+        
+
     }
 
     setElementsVisibility(elements) {

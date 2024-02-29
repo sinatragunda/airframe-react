@@ -4,24 +4,30 @@ import PropTypes from 'prop-types';
 import { withPageConfig } from './../Layout';
 
 const SidebarTrigger = (props) => {
-    const { tag: Tag, pageConfig, ...otherProps } = props;
-    return (
-        <Tag
-            onClick={ () => { props.pageConfig.toggleSidebar(); return false; } }
-            active={ Tag !== 'a' ? !pageConfig.sidebarCollapsed : undefined }
-            { ...otherProps }
-        >
-            { props.children }
-        </Tag>
-    )
+    const { tag: Tag, pageConfig, ...otherProps} = props;
+    
+    if(props.show){
+        return (
+            <Tag
+                onClick={ () => { props.pageConfig.toggleSidebar(); return false; } }    
+                active={ Tag !== 'a' ? !pageConfig.sidebarCollapsed : undefined }            
+                { ...otherProps }
+            >
+                { props.children }
+            </Tag>
+        )
+    }
+    return <></>
 };
 SidebarTrigger.propTypes = {
     tag: PropTypes.any,
     children: PropTypes.node,
     pageConfig: PropTypes.object
 }
+
 SidebarTrigger.defaultProps = {
     tag: NavLink,
+    show:false,
     children: <i className="fa fa-bars fa-fw"></i>
 }
 

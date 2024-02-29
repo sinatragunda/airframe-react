@@ -115,12 +115,15 @@ import LoginContainer from './../containers/login/LoginContainer';
 import { HomeContainer } from '../containers/home';
 import AuthentificationGuard from '../containers/authentification/AuthentificationGuard';
 
+import ClientProfileDetailsContainer from './../containers/client/ClientProfileDetailsContainer';
+
 //------ Route Definitions --------
 // eslint-disable-next-line no-unused-vars
 export const RoutedContent = () => {
     return (
         <Routes>
             <Route path="" element = {<AuthentificationGuard/>}>
+                <Route path='/' exact element={<HomeContainer/>} />
                 <Route path="/home" exact element = {<HomeContainer/>} />
                 <Route path="/dashboards/analytics" exact element={Analytics} />
                 <Route path="/dashboards/projects" exact element={ProjectsDashboard} />
@@ -131,6 +134,10 @@ export const RoutedContent = () => {
                 <Route path="/dashboards/reports" exact element={Reports} />
 
                 <Route path='/widgets' exact element={Widgets} />
+
+                {/* Portfolio */}
+                <Route element={ <ClientProfileDetailsContainer/> } path="/profile" />
+                
                 
                 { /*    Cards Routes     */ }
                 <Route path='/cards/cards' exact element={Cards} />
@@ -221,7 +228,9 @@ export const RoutedContent = () => {
                 <Route element={ ForgotPassword } path="/pages/forgot-password" />
                 <Route element={ LockScreen } path="/pages/lock-screen" />
                 
-                <Route element={ LoginContainer } path="/login" />
+                <Route element={ <LoginContainer/> } path="/login" />
+                <Route element={ <Error404/> } path="*" />
+                
                 
                 <Route element={ Register } path="/pages/register" />
                 <Route element={ Success } path="/pages/success" />
@@ -250,7 +259,7 @@ export const RoutedNavbars  = () => (
         />
         { /* Default Navbar: */}
         <Route
-            path='/'
+            path='*'
             element={ <DefaultNavbar/> }
         />
     </Routes>  
@@ -260,16 +269,19 @@ export const RoutedSidebars = () => (
     <Routes>
         { /* Other Sidebars: */}
         <Route
+            exact
             element={ <SidebarASidebar/> }
             path="/layouts/sidebar-a"
         />
         <Route
+            exact
             element={ <SidebarWithNavbar.Sidebar/> }
             path="/layouts/sidebar-with-navbar"
         />
         { /* Default Sidebar: */}
         <Route
-            path='/'
+            exact
+            path='*'
             element={ <DefaultSidebar/> }
         />
     </Routes>

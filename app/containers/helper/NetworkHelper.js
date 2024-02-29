@@ -18,18 +18,37 @@ class NetworkHelper extends React.Component{
 		
 		let promise = new Promise((resolve ,reject)=>{
 			
-			let url = this.buildUrl('authentication');
-			
+			let url = '/authentication';
 			axios.post(url ,payload ,options).then((response)=>{
-				alert("sucessful authentication");
+				resolve(response);
+			}).catch((e)=>{
+				reject(e);
+			});
+		})
+
+		return promise;
+	}
+
+	
+	static get = (url)=>{
+		
+		let promise = new Promise((resolve ,reject)=>{			
+			axios.get(url).then((response)=>{
+				//alert("Get Response "+JSON.stringify(response));
 				resolve(response);
 			}).catch((e)=>{
 				alert('Reject here but do we do anything later ?  '+JSON.stringify(e));
 				reject(e);
 			});
 		})
-
 		return promise;
+	}
+
+	static isOK = (response)=>{
+		if(response.status === 200){
+			return true ;
+		}
+		return false;
 	}
 }
 

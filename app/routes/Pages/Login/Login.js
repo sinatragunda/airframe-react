@@ -15,6 +15,7 @@ import {
 
 import { HeaderAuth } from "../../components/Pages/HeaderAuth";
 import { FooterAuth } from "../../components/Pages/FooterAuth";
+import ErrorDirective from '../../../containers/directives/ErrorDirective';
 
 
 const Login = (props) => (
@@ -27,6 +28,7 @@ const Login = (props) => (
             />
             { /* END Header */}
             { /* START Form */}
+            <ErrorDirective />
             <Form className="mb-3">
                 <FormGroup>
                     <Label for="emailAdress">

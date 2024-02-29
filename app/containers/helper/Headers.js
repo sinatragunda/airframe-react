@@ -1,8 +1,9 @@
 
+
+
 const Headers ={
     "Accept" : 'application/json',
-    "Content-Type":"application/json",
-    "Fineract-Platform-Tenantid":"nkwazi"
-
+    "Content-Type":"application/json"
 }
+
 export default Headers ;

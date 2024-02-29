@@ -19,6 +19,7 @@ export const DefaultNavbar = () => (
         <Nav navbar>
             
             <NavItem className="mr-3">
+                {/* defaulr show value set to false in defaultProps */}
                 <SidebarTrigger/>
             </NavItem>
             

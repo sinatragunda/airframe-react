@@ -2,6 +2,7 @@
 import {authenticationState} from './../store';
 import { useNavigation} from 'react-router-dom';
 import { Navigate } from 'react-big-calendar';
+import buildNetworkRequest from '../containers/network/BuildNetworkRequest';
 
 const LoginReducer = ( state = authenticationState ,action)=>{
 	
@@ -16,7 +17,8 @@ const LoginReducer = ( state = authenticationState ,action)=>{
 					authenticationKey: action.payload.base64EncodedAuthenticationKey
 				}
 			});
-			alert('this new state is '+JSON.stringify(ret)); 
+			buildNetworkRequest(ret.authentication);
+			alert('this new state is '+JSON.stringify(ret));
 			return ret ;	
 		case 'LOGIN_FAILED':
 			alert('Login failed dispatch hence kill operation');
@@ -25,6 +27,7 @@ const LoginReducer = ( state = authenticationState ,action)=>{
 	}
 	return state;
 }
+
 
 
 export default LoginReducer;

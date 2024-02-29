@@ -48,8 +48,6 @@ const onAuthenticationFailed = (response ,dispatch)=>{
 			action = actions.networkActions.loginFailed();
 			break;
 	}
-
-	alert('Authentication failed and your response is '+JSON.stringify(response));	
 	dispatch(action);
 
 }

@@ -47,7 +47,7 @@ const Home = () => (
         <Row className="mb-2">
             <Col lg={ 12 }>
                 <HeaderMain 
-                    title="Financial"
+                    title="Agent Home"
                     className="mb-4 mb-lg-3"
                 />
 
@@ -56,7 +56,7 @@ const Home = () => (
         <Row>
             <Col lg={ 12 }>
                 <div className="hr-text hr-text-center mt-4 mb-4">
-                    <span>Your Cash</span>
+                    <span>Portfolio</span>
                 </div>
             </Col>
             <Col lg={ 3 }>
@@ -131,25 +131,26 @@ const Home = () => (
                 <CardDeck>
                     <Card className="mb-3">
                         <CardBody>
-                            <CardTitle className="mb-4 d-flex">
-                                <h6>Money Map</h6>
-                                <UncontrolledDropdown className="ml-auto">
-                                    <DropdownToggle color="link" size="sm" caret className="pt-0">
-                                        Last Month
-                                    </DropdownToggle>
-                                    <DropdownMenu right>
-                                        <DropdownItem header>Select Date</DropdownItem>
-                                        <DropdownItem active>Last Month</DropdownItem>
-                                        <DropdownItem>Last 12 Months</DropdownItem>
-                                        <DropdownItem divider />
-                                        <DropdownItem>Custom...</DropdownItem>
-                                    </DropdownMenu>
-                                </UncontrolledDropdown>
+                            <CardTitle className="mb-1 d-flex">
+                                <h6>Recent Transactions</h6>
+                                <Button color="link" size="sm" className="pt-0 ml-auto">
+                                    View All <i className="fa fa-angle-right"></i>
+                                </Button>
                             </CardTitle>
-                            <div className="d-flex justify-content-center">
-                                <TinyDonutChartBig />
-                            </div>
                         </CardBody>
+                        <Table responsive striped className="mb-0">
+                            <thead>
+                                <tr>
+                                    <th className="bt-0">Company</th>
+                                    <th className="bt-0">Amount</th>
+                                    <th className="bt-0">Date</th>
+                                    <th className="bt-0 text-right">Action</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <TrTableRecentFundings />
+                            </tbody>
+                        </Table>
                     </Card>
                     <Card className="mb-3">
                         <CardBody>

@@ -8,7 +8,8 @@ const authenticationState = {
 }
 
 const networkState ={
-	connectionError:false
+	connectionError:false,
+	errorMessage : null
 	
 }
 
